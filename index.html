@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="navbar navbar--light">
+        <div class="navbar-left">
+            <img src="assets/images/1.png" class="logo logo--light" alt="ShopBag logo light">
+            <img src="assets/images/2.png" class="logo logo--dark" alt="ShopBag logo dark">
+        </div>
+        <input 
+            type="text" 
+            id="search-input"
+            placeholder="Search products..."
+            aria-label="Search products"
+        />
+        <div class="navbar-right">
+            <img src="assets/images/shopping-cart.png" class="cart-icon" alt="Cart">
+            <span class="cart-count" data-count="0">0</span>
+        </div>
+    </header>
+
+    <aside class="filter">
+        <select id="filter-category">
+            <option selected value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="books">Books</option>
+            <option value="home">Home</option>
+        </select>
+        <select id="filter-price">
+            <option value="all" selected>Select price</option>
+            <option value="0-1000">Under ₹1,000</option>
+            <option value="1000-5000">₹1,000 - ₹5,000</option>
+            <option value="5000-10000">₹5,000 - ₹10,000</option>
+            <option value="10000-20000">₹10,000 - ₹20,000</option>
+            <option value="over-20000">Over ₹20,000</option>
+        </select>
+    </aside>
+
+    <main class="products">
+        <section class="product-grid"></section>
+    </main>
+
+    <button type="button" class="back-to-top">Back to top</button>
+    <footer>
+        <section class="navFootbars">
+            <div>
+                <div class="Footbar">
+                    <h3>Get to Know Us</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="Footbar">
+                    <h3>Connect with Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="Footbar">
+                    <h3>Let Us Help You</h3>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Center</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <div>
+                <span>Conditions of Use & Sale</span>
+                <span>Privacy Notice</span>
+                <span>Interest-Based Ads</span>
+            </div>
+            <div>
+                © 1996-2025, ShopBag.com, Inc. or its affiliates 
+            </div>
+        </section>
+    </footer>
+
+    <div class="cart-overlay hidden">
+        <div class="cart-modal">
+            <header class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart">&times;</button>
+            </header>
+
+            <div class="cart-items"></div>
+
+            <footer class="cart-footer">
+                <p class="cart-total">Total: ₹0</p>
+                <button class="checkout-btn">Checkout</button>
+
+                <form class="checkout-form hidden" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required />
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required />
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" id="phone" required />
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea name="address" required></textarea>
+                        <small class="error"></small>
+                    </div>
+
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/filters.js"></script>
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/cart-ui.js"></script>
+    <script type="module" src="js/checkout.js"></script>
+    <script type="module" src="js/utils.js"></script>
+</body>
+</html>
